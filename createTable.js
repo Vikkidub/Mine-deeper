@@ -12,7 +12,6 @@
 
     if (isBomb) {
         column.textContent = "🧨";
-        column.style.color = "transparent";
         column.onclick = (function (currentColumn) {
             return function () {
                 bombActivation(currentColumn);
