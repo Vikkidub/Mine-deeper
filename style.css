@@ -1,0 +1,36 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 0vh; 
+    margin: 0; 
+    background-color: black;
+  }
+
+  h1{
+    color: white;
+  }
+
+  #textDiv{
+    color: white;
+    font-size: 25px;
+  }
+
+#playfield{
+    font-size: 30px;
+    border: solid grey 5px;
+}
+td{
+    border: solid black 2px;
+    background-color: blue;
+}
+
+td:hover{
+    cursor: pointer;
+    background-color: yellow;
+    color: green;
+}
+
+#bomb{
+  background-color: orange;
+    color: red;
+}
