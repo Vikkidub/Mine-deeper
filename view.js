@@ -1,12 +1,11 @@
-var app = document.getElementById('app');
-
 updateView();
 function updateView(){
 app.innerHTML = /*HTML*/`
 <h1>Mine deeper</h1>
-<div id="statsDiv">Level: ${level}</div>
+<div id="levelDiv">Level: ${level}. Energy: ${gamestate.remainingClicks}</div>
 <table id="playfield"></table>
+<div id="scoreDiv"></div>
 <div id="textDiv"></div>
 `;
+scoreDiv.innerHTML = "Score: " + score
 }
-

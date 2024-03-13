@@ -1,4 +1,4 @@
-createPlayfield(2,2,1);
+createPlayfield(2, 2, 1);
 function createPlayfield(rows, columns, bombs) {
     totalCells = rows * columns;
 
@@ -14,15 +14,15 @@ function createPlayfield(rows, columns, bombs) {
 
             if (isBomb) {
                 column.textContent = "🧨";
-                column.onclick = (function (currentColumn) {
+                column.onclick = (function (cell) {
                     return function () {
-                        bombActivation(currentColumn);
+                        bombActivation(cell);
                     };
                 })(column);
             } else {
-                column.onclick = (function (currentColumn) {
+                column.onclick = (function (cell) {
                     return function () {
-                        safeActivation(currentColumn);
+                        safeActivation(cell);
                     };
                 })(column);
             }
