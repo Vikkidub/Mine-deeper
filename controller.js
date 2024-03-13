@@ -10,22 +10,22 @@ function updatePlayfield() {
     else if (level == 2) {
         gamestate.remainingClicks += 5;
         updateView();
-        createPlayfield(3, 3, 2);
+        createPlayfield(3, 3, 4);
     }
     else if (level == 3) {
         gamestate.remainingClicks += 8;
         updateView();
-        createPlayfield(4, 4, 3);
+        createPlayfield(4, 4, 8);
     }
     else if (level == 4) {
         gamestate.remainingClicks += 10;
         updateView();
-        createPlayfield(5, 5, 4);
+        createPlayfield(5, 5, 10);
     }
     else if (level == 5) {
         gamestate.remainingClicks += 12;
         updateView();
-        createPlayfield(6, 6, 5);
+        createPlayfield(6, 6, 11);
     }
 }
 
@@ -34,7 +34,9 @@ function bombActivation(bomb) {
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
+    document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
+    document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     updateActiveCells(3);
     checkGameStatus();
 }
@@ -42,7 +44,9 @@ function safeActivation(safespace) {
     document.getElementById('textDiv').innerHTML = "Nice going!";
     safespace.style.backgroundColor = "green";
     score++;
+    document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
+    document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     updateActiveCells(1);
     checkGameStatus();
 }

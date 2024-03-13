@@ -1,8 +1,9 @@
 var app = document.getElementById('app');
 
-level = 1;
-totalCellsClicked = 0;
-score = 0;
+var level = 1;
+var totalCells = 2 * 2;
+var totalCellsClicked = 0;
+var score = 0;
 
 var gamestate = {
    remainingClicks: 3
