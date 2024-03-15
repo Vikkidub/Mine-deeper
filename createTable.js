@@ -1,4 +1,5 @@
 createPlayfield(2, 2, 1);
+
 function createPlayfield(rows, columns, bombs) {
     totalCells = rows * columns;
     var bombCount = 0;
@@ -7,29 +8,37 @@ function createPlayfield(rows, columns, bombs) {
         var row = document.createElement("tr");
 
         for (var c = 0; c < columns; c++) {
-            var column = document.createElement("td");
-            column.textContent = "|||||||||||";
-            column.style.color = "transparent";
+            var cell = document.createElement("td");
+            
+            cell.textContent = "|||||||||||";
+            cell.style.color = "transparent";
+            cell.clicked = false;
 
             if (bombCount < bombs && Math.random() < (bombs - bombCount) / (totalCells - (r * columns + c))) {
-                column.textContent = "🧨";
-                column.onclick = (function (cell) {
+                cell.textContent = "🧨";
+                cell.onclick = (function (cell) {
                     return function () {
-                        bombActivation(cell);
+                        if (!cell.clicked) {
+                            bombActivation(cell);
+                            cell.clicked = true; 
+                        }
                     };
-                })(column);
+                })(cell);
                 bombCount++;
             } else {
-                column.onclick = (function (cell) {
+                cell.onclick = (function (cell) {
                     return function () {
-                        safeActivation(cell);
+                        if (!cell.clicked) {
+                            safeActivation(cell);
+                            cell.clicked = true; 
+                        }
                     };
-                })(column);
+                })(cell);
             }
 
-            row.appendChild(column);
+            row.appendChild(cell);
         }
-
         document.getElementById("playfield").appendChild(row);
     }
 }
+

@@ -6,5 +6,6 @@ var totalCellsClicked = 0;
 var score = 0;
 
 var gamestate = {
-   remainingClicks: 3
+   remainingClicks: 3,
+   bombSpecialist: false
 };

@@ -28,7 +28,6 @@ function updatePlayfield() {
         createPlayfield(6, 6, 11);
     }
 }
-
 function bombActivation(bomb) {
     document.getElementById('textDiv').innerHTML = "You clicked a bomb!";
     bomb.style.backgroundColor = "grey";
@@ -38,9 +37,11 @@ function bombActivation(bomb) {
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     updateActiveCells(3);
+    if (gamestate.bombSpecialist) { updateActiveCells(2); }
     checkGameStatus();
 }
 function safeActivation(safespace) {
+    
     document.getElementById('textDiv').innerHTML = "Nice going!";
     safespace.style.backgroundColor = "green";
     score++;
