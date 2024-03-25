@@ -9,9 +9,15 @@ body {
   h1{
     color: orange;
   }
+  h2{
+    color: purple;
+  }
   div{
     color: white;
     font-size: 25px;
+  }
+  button{
+    background-color: brown;
   }
 
 #playfield{

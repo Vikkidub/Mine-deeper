@@ -33,18 +33,19 @@ function bombActivation(bomb) {
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
+    availableUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
-    updateActiveCells(3);
-    if (gamestate.bombSpecialist) { updateActiveCells(2); }
+    if (gamestate.bombSpecialist == false){updateActiveCells(3)}
+    else if (gamestate.bombSpecialist == true){ updateActiveCells(6); score += 3;     document.getElementById('scoreDiv').innerHTML = score}
     checkGameStatus();
 }
 function safeActivation(safespace) {
-    
     document.getElementById('textDiv').innerHTML = "Nice going!";
     safespace.style.backgroundColor = "green";
     score++;
+    availableUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -77,4 +78,16 @@ function checkGameStatus() {
         updatePlayfield();
     }
 }
+
+// upgrade button changes color when an upgrade is available
+function availableUpgrades(upgrade){
+    if (score >= upgrade ){
+        document.getElementById('upgradeButton').style.backgroundColor = 'green';
+    }
+}
+
+function enableUpgrade(upgradeKey) {
+    gamestate[upgradeKey] = true;
+}
+
 
