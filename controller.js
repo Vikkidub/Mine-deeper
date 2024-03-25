@@ -79,15 +79,23 @@ function checkGameStatus() {
     }
 }
 
-// upgrade button changes color when an upgrade is available
+function enableUpgrade(upgrade, cost) {
+    if (gamestate[upgrade] == true) { textDiv.innerHTML = "You already have this upgrade"}//allow stacking upgrades?
+    else if (score >= cost){
+    gamestate[upgrade] = true;
+    score -= cost;
+    scoreDiv.innerHTML = score;
+    textDiv.innerHTML = "Upgrade unlocked!"
+    }
+    else {textDiv.innerHTML = "Not enough gold.."}
+}
+
+// fix color resetting to orange instead of green after unlock
 function availableUpgrades(upgrade){
-    if (score >= upgrade ){
-        document.getElementById('upgradeButton').style.backgroundColor = 'green';
+    if (  gamestate[upgrade] = true){
+         document.getElementById('upgradeButton').style.backgroundColor = 'green';
+    }   
+   else if (score >= upgrade ){
+        document.getElementById('upgradeButton').style.backgroundColor = 'orange';
     }
 }
-
-function enableUpgrade(upgradeKey) {
-    gamestate[upgradeKey] = true;
-}
-
-

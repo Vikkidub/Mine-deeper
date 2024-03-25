@@ -13,10 +13,10 @@ app.innerHTML = /*HTML*/`
 
 <h2>Upgrades</h2>
 <div>Bomb specialist: ${gamestate.bombSpecialist}</div>
-<button id="upgradeButton" onclick="enableUpgrade('bombSpecialist')">Purchase for 20 Gold</button>
+<button id="upgradeButton" onclick="enableUpgrade('bombSpecialist', 20)">Purchase for 20 Gold</button>
 
 <div>Night vision: ${gamestate.nightVision}</div>
-<button id="upgradeButton" onclick="enableUpgrade('nightVision')">Purchase for 20 Gold</button>
+<button id="upgradeButton" onclick="enableUpgrade('nightVision', 20)">Purchase for 20 Gold</button>
 `;
 scoreDiv.innerHTML = "Gold: " + score
 }
