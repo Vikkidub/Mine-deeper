@@ -1,7 +1,7 @@
 function updatePlayfield() {
+    playfield.style.userSelect = 'none';
     document.getElementById('playfield').innerHTML = "";
     totalCellsClicked = 0;
-   
     if (level == 1) {
         gamestate.remainingClicks = 3;
         updateView();
@@ -33,7 +33,7 @@ function bombActivation(bomb) {
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
-    availableUpgrades(20);
+    revealUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -45,7 +45,7 @@ function safeActivation(safespace) {
     document.getElementById('textDiv').innerHTML = "Nice going!";
     safespace.style.backgroundColor = "green";
     score++;
-    availableUpgrades(20);
+    revealUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -80,7 +80,11 @@ function checkGameStatus() {
 }
 
 function enableUpgrade(upgrade, cost) {
-    if (gamestate[upgrade] == true) { textDiv.innerHTML = "You already have this upgrade"}//allow stacking upgrades?
+  upgradeLogic(upgrade, cost);
+}
+
+function upgradeLogic(upgrade, cost){
+  if (gamestate[upgrade] == true) { textDiv.innerHTML = "This upgrade is out of stock"}//allow stacking upgrades?
     else if (score >= cost){
     gamestate[upgrade] = true;
     score -= cost;
@@ -91,11 +95,18 @@ function enableUpgrade(upgrade, cost) {
 }
 
 // fix color resetting to orange instead of green after unlock
-function availableUpgrades(upgrade){
+function revealUpgrades(upgrade){
     if (  gamestate[upgrade] = true){
          document.getElementById('upgradeButton').style.backgroundColor = 'green';
     }   
    else if (score >= upgrade ){
         document.getElementById('upgradeButton').style.backgroundColor = 'orange';
+    }
+}
+
+function activateNightVision(){
+    if (gamestate['nightVision'] == true){
+    playfield.style.userSelect = 'all';
+    levelDiv.style.color = 'magenta'
     }
 }

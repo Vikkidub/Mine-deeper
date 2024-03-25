@@ -10,7 +10,6 @@ function createPlayfield(rows, columns, bombs) {
         for (var c = 0; c < columns; c++) {
             var cell = document.createElement("td");
             
-            cell.textContent = "|||||||||||";
             cell.style.color = "transparent";
             cell.clicked = false;
 

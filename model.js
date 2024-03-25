@@ -7,7 +7,7 @@ var score = 0; // gold
 
 var gamestate = {
    remainingClicks: 3, 
-   bombSpecialist: false, // bombs explode a second time 
-   nightVision: false // reveals bomb locations for a turn
+   bombSpecialist: false, // doubled explosion impact
+   nightVision: false // reveals bomb locations for one level
 };
 

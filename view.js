@@ -16,7 +16,7 @@ app.innerHTML = /*HTML*/`
 <button id="upgradeButton" onclick="enableUpgrade('bombSpecialist', 20)">Purchase for 20 Gold</button>
 
 <div>Night vision: ${gamestate.nightVision}</div>
-<button id="upgradeButton" onclick="enableUpgrade('nightVision', 20)">Purchase for 20 Gold</button>
+<button id="upgradeButton" onclick="enableUpgrade('nightVision', 10); activateNightVision()">Purchase for 10 Gold</button>
 `;
 scoreDiv.innerHTML = "Gold: " + score
 }
