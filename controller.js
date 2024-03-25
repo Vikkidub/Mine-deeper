@@ -29,7 +29,7 @@ function updatePlayfield() {
     }
 }
 function bombActivation(bomb) {
-    document.getElementById('textDiv').innerHTML = "You clicked a bomb!";
+    document.getElementById('textDiv').innerHTML = "Bomb detonated!";
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
@@ -42,8 +42,8 @@ function bombActivation(bomb) {
     checkGameStatus();
 }
 function safeActivation(safespace) {
-    document.getElementById('textDiv').innerHTML = "Nice going!";
-    safespace.style.backgroundColor = "green";
+    document.getElementById('textDiv').innerHTML = "Digging a hole ♪";
+    safespace.style.backgroundColor = "black";
     score++;
     revealUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = score

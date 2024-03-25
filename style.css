@@ -1,23 +1,31 @@
 body {
-    display: grid;
-    place-items: center;
-    height: 0vh; 
-    margin: 0; 
+  margin-left: 10%;
     background-color: black;
+    font-family: "Courier New", Courier, monospace;
   }
 
   h1{
-    color: orange;
+    color: goldenrod;
   }
   h2{
-    color: purple;
+    font-size: 30px;
+    color: rgb(157, 76, 189);
   }
   div{
-    color: white;
+    color:rgba(245, 245, 220, 0.733);
     font-size: 25px;
   }
+  #scoreDiv{
+    color: goldenrod;
+  }
   button{
-    background-color: brown;
+    font-size: 18px;
+    height: 25px;
+    background-color: rgb(128, 63, 47);
+    color:rgba(245, 245, 220, 0.733);
+  }
+  button:hover{
+    cursor: pointer;
   }
 
 #playfield{
@@ -29,12 +37,12 @@ td{
   width: 69px;
   height: 50px; 
   border: solid black 2px;
-  background-color: blue;
+  background-color: rgba(138, 91, 53, 0.74);
 }
 
 td:hover{
     cursor: pointer;
-    background-color: yellow;
+    background-color: goldenrod;
     color: green;
 }
 

@@ -8,15 +8,15 @@ app.innerHTML = /*HTML*/`
 
 <table id="playfield"></table>
 <div id="scoreDiv"></div>
-<div id="textDiv"></div>
-</br>
+<div id="textDiv">Choose a spot to start mining</div>
+<br></br>
 
 <h2>Upgrades</h2>
-<div>Bomb specialist: ${gamestate.bombSpecialist}</div>
-<button id="upgradeButton" onclick="enableUpgrade('bombSpecialist', 20)">Purchase for 20 Gold</button>
-
 <div>Night vision: ${gamestate.nightVision}</div>
 <button id="upgradeButton" onclick="enableUpgrade('nightVision', 10); activateNightVision()">Purchase for 10 Gold</button>
+<br></br>
+<div>Bomb specialist: ${gamestate.bombSpecialist}</div>
+<button id="upgradeButton" onclick="enableUpgrade('bombSpecialist', 20)">Purchase for 20 Gold</button>
 `;
 scoreDiv.innerHTML = "Gold: " + score
 }
