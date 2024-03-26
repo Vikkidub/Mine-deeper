@@ -19,8 +19,9 @@ body {
     color: goldenrod;
   }
   button{
-    font-size: 18px;
-    height: 25px;
+    margin-top: 5px;
+    font-size: 20px;
+    height: 30px;
     background-color: rgb(128, 63, 47);
     color:rgba(245, 245, 220, 0.733);
   }
