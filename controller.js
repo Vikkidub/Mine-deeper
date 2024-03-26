@@ -33,19 +33,19 @@ function bombActivation(bomb) {
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
- // revealUpgrades(20);
+// revealUpgrades(upgrade.cost);
     document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     if (gamestate.bombSpecialist == false){updateActiveCells(3)}
-    else if (gamestate.bombSpecialist == true){ updateActiveCells(6); score += 3;     document.getElementById('scoreDiv').innerHTML = score}
+    else if (gamestate.bombSpecialist == true){ updateActiveCells(6); score += 3;     document.getElementById('scoreDiv').innerHTML = "Gold: " + score}
     checkGameStatus();
 }
 function safeActivation(safespace) {
     document.getElementById('textDiv').innerHTML = "Digging a hole ♪";
     safespace.style.backgroundColor = "black";
     score++;
- // revealUpgrades(20);
+ // revealUpgrades(upgrade.cost);
     document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -94,9 +94,8 @@ function upgradeLogic(upgrade, cost){
     else {textDiv.innerHTML = "Not enough gold.."}
 }
 
-// fix color resetting to orange instead of green after unlock
-/* function revealUpgrades(upgrade){
-    if (  gamestate[upgrade] = true){
+ /* function revealUpgrades(upgrade){
+    if (gamestate[upgrade] == true){
          document.getElementById('upgradeButton').style.backgroundColor = 'green';
     }   
    else if (score >= upgrade ){

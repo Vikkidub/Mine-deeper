@@ -22,7 +22,7 @@ body {
     margin-top: 5px;
     font-size: 20px;
     height: 30px;
-    background-color: rgb(128, 63, 47);
+    background-color: rgba(192, 110, 192, 0.377);
     color:rgba(245, 245, 220, 0.733);
   }
   button:hover{

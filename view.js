@@ -12,10 +12,10 @@ app.innerHTML = /*HTML*/`
 <br></br>
 
 <h2>Upgrades</h2>
-<div>Night vision: ${gamestate.nightVision}</div>
+<div>Night vision</div>
 <button id="upgradeButton" onclick="enableUpgrade('nightVision', 10); activateNightVision()">Purchase for 10 Gold</button>
 <br></br>
-<div>Bomb specialist: ${gamestate.bombSpecialist}</div>
+<div>Bomb specialist</div>
 <button id="upgradeButton" onclick="enableUpgrade('bombSpecialist', 20)">Purchase for 20 Gold</button>
 `;
 }
