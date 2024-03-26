@@ -33,7 +33,7 @@ function bombActivation(bomb) {
     bomb.style.backgroundColor = "grey";
     bomb.style.color = "black";
     score += 3;
-    revealUpgrades(20);
+ // revealUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -45,7 +45,7 @@ function safeActivation(safespace) {
     document.getElementById('textDiv').innerHTML = "Digging a hole ♪";
     safespace.style.backgroundColor = "black";
     score++;
-    revealUpgrades(20);
+ // revealUpgrades(20);
     document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
@@ -95,14 +95,14 @@ function upgradeLogic(upgrade, cost){
 }
 
 // fix color resetting to orange instead of green after unlock
-function revealUpgrades(upgrade){
+/* function revealUpgrades(upgrade){
     if (  gamestate[upgrade] = true){
          document.getElementById('upgradeButton').style.backgroundColor = 'green';
     }   
    else if (score >= upgrade ){
         document.getElementById('upgradeButton').style.backgroundColor = 'orange';
     }
-}
+} */
 
 function activateNightVision(){
     if (gamestate['nightVision'] == true){
