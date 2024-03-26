@@ -34,7 +34,7 @@ function bombActivation(bomb) {
     bomb.style.color = "black";
     score += 3;
     revealUpgrades(20);
-    document.getElementById('scoreDiv').innerHTML = score
+    document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     if (gamestate.bombSpecialist == false){updateActiveCells(3)}
@@ -46,7 +46,7 @@ function safeActivation(safespace) {
     safespace.style.backgroundColor = "black";
     score++;
     revealUpgrades(20);
-    document.getElementById('scoreDiv').innerHTML = score
+    document.getElementById('scoreDiv').innerHTML = "Gold: " + score
     gamestate.remainingClicks--;
     document.getElementById('energyDiv').innerHTML = "Energy: " + gamestate.remainingClicks;
     updateActiveCells(1);
